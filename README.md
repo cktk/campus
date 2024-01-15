@@ -1,57 +1,71 @@
 <p align="center"><a href="https://oddfar.com/" target="_blank" rel="noopener noreferrer"><img width="180" src="https://note.oddfar.com/img/web.png" alt="logo"></a></p>
 
 <p align="center">
-  <a href="https://github.com/oddfar/campus/stargazers"><img src="https://img.shields.io/github/stars/oddfar/campus.svg"></a>
-	<a href="https://github.com/oddfar/campus/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg"></a>
+  <a href="https://github.com/oddfar/campus-imaotai/stargazers"><img src="https://img.shields.io/github/stars/oddfar/campus-imaotai.svg"></a>
+	<a href="https://github.com/oddfar/campus-imaotai/blob/master/LICENSE"><img src="https://img.shields.io/github/license/oddfar/campus-imaotai.svg"></a>
 </p>
-<p align="center"> Campus，一个简单的前后端分离后台管理系统，RuoYi-Vue简单版 </p>
 
-<h2 align="center">Campus</h2>
+<p align="center"> i茅台app自动预约，每日自动预约，支持docker一键部署</p>
 
- [项目文档](https://oddfar.github.io/campus-doc/)  | [笔记仓库](https://github.com/oddfar/notes)  |  [我的博客](https://oddfar.com)  
+<h2 align="center">Campus-imaotai</h2>
+
+  [笔记仓库](https://github.com/oddfar/notes)  |  [我的博客](https://oddfar.com)  
+
+## 修改说明
+去掉之前的多模块形式改成传统的简单模式
+去掉nginx模式 直接把代码丢到根目录下 通过tomcat形式运行
+想去掉redis 报错太多  懒得改了
+增加docker-compose 一键运行 只需要 [init] 文件夹 和[docker-compose.yml](docker-compose.yml) 这个文件就行 
+然后执行docker-compose up -d  默认关闭了 redis mysql 的端口 需要的话自己修改docker-compose.yml 里面的端口开放出来
+访问 http://127.0.0.1:8016/index.html 
+## 鸣谢
 
 ## 项目介绍
 
-> 想重构之前的校园信息墙项目，又想学习若依项目，就手写了 RuoYi-Vue 并修改了部分功能，于是有了这套后台系统，所以取名为campus
+i茅台app，每日自动预约茅台
 
-**Campus** 一款简单的后台管理系统，**RuoYi-Vue简单版**，快速开发框架，适合大学生开发毕设，或其他小项目。
+- [x] 平台注册账号(可用i茅台)
+- [x] 添加多个用户
+- [x] 自动预约
+- [x] 类型选择（本市出货量最大的门店，或位置附近门店）
+- [x] 自动旅行
+- [x] 首次旅行分享
+- [x] 获取申购耐力值
+- [x] 自定义时间/随机时间预约或旅行
+- [x] 结果消息推送
 
-使用Spring Boot、Spring Security、MyBatis Plus、Jwt、Vue等技术
+此项目使用 **Campus** 进行编写：<https://github.com/oddfar/campus>
 
-您可以根据此项目，快速开发毕设项目，无需注重系统代码，只需业务代码！
+## 使用教程
 
-## 项目文档
+- 文档教程
 
-- 项目在线预览地址：暂无
-- 项目文档：<https://oddfar.github.io/campus-doc/>
+  https://oddfar.github.io/campus-doc/campus-imaotai
+  
+- 视频教程
 
-## 对比RuoYi
+  https://www.bilibili.com/video/BV1dj411H7oT
 
-### 功能差异
+有问题请查看文档，查找 [issues](https://github.com/oddfar/campus-imaotai/issues) 上是否有相同问题，若没有则提交 [issues](https://github.com/oddfar/campus-imaotai/issues)  ，附带详细的错误原因
 
-| 功能         | 本框架                                            | RuoYi             |
-| ------------ | ------------------------------------------------- | ----------------- |
-| 权限认证     | 增加接口管理，动态分配角色权限                    | 不支持动态分配    |
-| ORM框架      | 采用 Mybatis-Plus                                 | 采用 Mybatis      |
-| 数据分页     | 采用 Mybatis-Plus 分页插件<br/>框架对其进行了扩展 | 采用 PageHelper   |
-| 用户依据     | 涉及表使用用户ID判断，方便更新用户                | 根据用户userName  |
-| 数据库主键   | 采用 雪花ID                                       | 采用 数据库自增ID |
-| SQL监控      | 采用 p6spy 可输出完整SQL与执行时间监控            | log输出           |
-| 多数据源框架 | dynamic-datasource                                | druid             |
+不会Docker部署的，可使用客户端：<https://github.com/lisongkun/hygge-imaotai>
 
-### 内置功能
 
-- [x] 用户管理：用户的管理配置。
-- [x] 菜单管理：配置系统菜单，操作权限，按钮权限标识等。
-- [x] 角色管理：角色菜单权限分配。
-- [x] 字典管理：对系统中经常使用的一些较为固定的数据进行维护。
-- [x] 参数管理：对系统动态配置常用参数。
-- [x] 操作日志：系统正常操作日志记录和查询；系统异常信息日志记录和查询。
-- [x] 登录日志：系统登录日志记录查询包含登录异常。
+## 友情链接
 
-新增
+- 葫芦娃项目
 
-- [x] 接口管理：动态分配角色接口权限
+  yize8888-maotai: https://github.com/yize8888/maotai
+
+## 演示图
+
+
+
+| i茅台预约                                                    |                                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![image-20230707144241399](https://gcore.jsdelivr.net/gh/oddfar/campus-imaotai/.github/image-20230707144241399.png) | ![image-20230707144404638](https://gcore.jsdelivr.net/gh/oddfar/campus-imaotai/.github/image-20230707144404638.png) |
+|                                                              |                                                              |
+| ![image-20230707144703842](https://gcore.jsdelivr.net/gh/oddfar/campus-imaotai/.github/image-20230707144703842.png) | ![image-20230707145525709](https://gcore.jsdelivr.net/gh/oddfar/campus-imaotai/.github/image-20230707145525709.png) |
 
 
 
@@ -61,54 +75,33 @@
 
 发起 pull request 请求，提交到 master 分支，等待作者合并
 
-## 致谢
+**感谢为这个项目贡献代码的朋友**
 
-此项目参考了一些开源项目的解决方案，在此感谢他们的开源
+<a href="https://github.com/oddfar/campus-imaotai/graphs/contributors">
+<img src="https://contrib.rocks/image?repo=oddfar/campus-imaotai" />
+</a>
 
-- Vue后台管理模板：[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
-- RuoYi：<https://gitee.com/y_project/RuoYi>
-- RuoYi Pro：<https://gitee.com/zhijiantianya/ruoyi-vue-pro>
-- Guns：<https://gitee.com/stylefeng/guns>
+## star 趋势图
 
-
-
-## 演示图
+![Stargazers over time](https://starchart.cc/oddfar/campus-imaotai.svg)
 
 
 
-|                            admin                             |                                                              |
-| :----------------------------------------------------------: | ------------------------------------------------------------ |
-| ![image-20230221090307473](https://gcore.jsdelivr.net/gh/oddfar/static/campus/doc/image-20230221090307473.png) | ![image-20230221091209986](https://gcore.jsdelivr.net/gh/oddfar/static/campus/doc/image-20230221091209986.png) |
-| ![image-20230221091408302](https://gcore.jsdelivr.net/gh/oddfar/static/campus/doc/image-20230221091408302.png) | ![image-20230221091331128](https://gcore.jsdelivr.net/gh/oddfar/static/campus/doc/image-20230221091331128.png) |
+## 声明
 
-
-
-> 案例：校园信息墙
-
-<https://github.com/oddfar/campus-example>
-
-网页端
-
-| web                                                          |                                                              |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![image-20230221091804015](https://gcore.jsdelivr.net/gh/oddfar/static/campus/doc/image-20230221091804015.png) | ![image-20230221091942563](https://gcore.jsdelivr.net/gh/oddfar/static/campus/doc/image-20230221091942563.png) |
-| ![image-20230221092022247](https://gcore.jsdelivr.net/gh/oddfar/static/campus/doc/image-20230221092022247.png) | ![image-20230221092059047](https://gcore.jsdelivr.net/gh/oddfar/static/campus/doc/image-20230221092059047.png) |
-| ![image-20230221092122331](https://gcore.jsdelivr.net/gh/oddfar/static/campus/doc/image-20230221092122331.png) | ![image-20230221092152935](https://gcore.jsdelivr.net/gh/oddfar/static/campus/doc/image-20230221092152935.png) |
-
-移动端（小程序）
-
-| 移动端                                                       |                                                              |                                                              |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![image-20230412210057613](https://gcore.jsdelivr.net/gh/oddfar/static/campus/doc/image-20230412210057613.png) | ![image-20230412210148423](https://gcore.jsdelivr.net/gh/oddfar/static/campus/doc/image-20230412210148423.png) | ![image-20230412210214019](https://gcore.jsdelivr.net/gh/oddfar/static/campus/doc/image-20230412210214019.png) |
-| ![image-20230412210256253](https://gcore.jsdelivr.net/gh/oddfar/static/campus/doc/image-20230412210256253.png) | ![image-20230412210328222](https://gcore.jsdelivr.net/gh/oddfar/static/campus/doc/image-20230412210328222.png) | ![image-20230412210405497](https://gcore.jsdelivr.net/gh/oddfar/static/campus/doc/image-20230412210405497.png) |
-| ![image-20230412210534659](https://gcore.jsdelivr.net/gh/oddfar/static/campus/doc/image-20230412210534659.png) | ![image-20230412210606552](https://gcore.jsdelivr.net/gh/oddfar/static/campus/doc/image-20230412210606552.png) |                                                              |
-
-
+- 本项目涉及的数据由使用的个人或组织自行填写，本项目不对数据内容负责，包括但不限于数据的真实性、准确性、合法性。使用本项目所造成的一切后果，与本项目的所有贡献者无关，由使用的个人或组织完全承担。
+- 本项目中涉及的第三方硬件、软件等，与本项目没有任何直接或间接的关系。本项目仅对部署和使用过程进行客观描述，不代表支持使用任何第三方硬件、软件。使用任何第三方硬件、软件，所造成的一切后果由使用的个人或组织承担，与本项目无关。
+- 本项目中所有内容只供学习和研究使用，不得将本项目中任何内容用于违反国家/地区/组织等的法律法规或相关规定的其他用途。
+- 所有基于本项目源代码，进行的任何修改，为其他个人或组织的自发行为，与本项目没有任何直接或间接的关系，所造成的一切后果亦与本项目无关。
+- 所有直接或间接使用本项目的个人和组织，应24小时内完成学习和研究，并及时删除本项目中的所有内容。如对本项目的功能有需求，应自行开发相关功能。
+- 本项目保留随时对免责声明进行补充或更改的权利，直接或间接使用本项目内容的个人或组织，视为接受本项目的特别声明。
 
 ## 鸣谢
 
 > [IntelliJ IDEA](https://zh.wikipedia.org/zh-hans/IntelliJ_IDEA) 是一个在各个方面都最大程度地提高开发人员的生产力的 IDE，适用于 JVM 平台语言。
 
-特别感谢 [JetBrains](https://www.jetbrains.com/?from=campus) 为开源项目提供免费的 [IntelliJ IDEA](https://www.jetbrains.com/idea/?from=campus) 等 IDE 的授权  
-[<img src=".github/jetbrains-variant.png" width="200"/>](https://www.jetbrains.com/?from=campus)
+特别感谢 [JetBrains](https://www.jetbrains.com/?from=campus) 为开源项目提供免费的 [IntelliJ IDEA](https://www.jetbrains.com/idea/?from=campus) 等 IDE 的授权    
+[<img src="https://gcore.jsdelivr.net/gh/oddfar/campus-imaotai/.github/jetbrains-variant.png" width="200"/>](https://www.jetbrains.com/?from=campus)
+
+
 
